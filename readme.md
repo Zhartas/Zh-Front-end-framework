@@ -12,4 +12,4 @@ The minimal front end framework
 1. Zhartas
 
 
-[Get started] (https://github.com/Zhartas/Zh-Front-end-framework)
+[Get started] (https://github.com/Zhartas/Zh-Front-end-framework/blob/master/getStarted.md "Get started")
