@@ -1,0 +1,174 @@
+/* container */
+.c {
+    width: 960px;
+    margin: auto;
+    position: relative;
+}
+
+/* row */
+.r {
+    width: 100%;
+    position: relative;
+}
+
+/* box */
+.b1, .b2, .b3, .b4, .b5, .b6, .b7, .b8, .b9, .b10, .b11, .b12 {
+    float: left;
+    position: relative;
+}
+
+.b1 {
+    width: 8.33333%;
+}
+
+.b2 {
+    width: 16.66666%;
+}
+
+.b3 {
+    width: 25%;
+}
+
+.b4 {
+    width: 33.33333%;
+}
+
+.b5 {
+    width: 41.66666%;
+}
+
+.b6 {
+    width: 50%;
+}
+
+.b7 {
+    width: 58.33333%;
+}
+
+.b8 {
+    width: 66.66666%;
+}
+
+.b9 {
+    width: 74.99999%;
+}
+
+.b10 {
+    width: 83.33333%;
+}
+
+.b11 {
+    width: 91.66666%;
+}
+
+.b12 {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .cm {
+        width: 90%;
+    }
+
+    .bm1 {
+        width: 8.33333%;
+    }
+
+    .bm2 {
+        width: 16.66666%;
+    }
+
+    .bm3 {
+        width: 25%;
+    }
+
+    .bm4 {
+        width: 33.33333%;
+    }
+
+    .bm5 {
+        width: 41.66666%;
+    }
+
+    .bm6 {
+        width: 50%;
+    }
+
+    .bm7 {
+        width: 58.33333%;
+    }
+
+    .bm8 {
+        width: 66.66666%;
+    }
+
+    .bm9 {
+        width: 74.99999%;
+    }
+
+    .bm10 {
+        width: 83.33333%;
+    }
+
+    .bm11 {
+        width: 91.66666%;
+    }
+
+    .bm12 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .cs {
+        width: 100%;
+    }
+
+    .bs1 {
+        width: 8.33333%;
+    }
+
+    .bs2 {
+        width: 16.66666%;
+    }
+
+    .bs3 {
+        width: 25%;
+    }
+
+    .bs4 {
+        width: 33.33333%;
+    }
+
+    .bs5 {
+        width: 41.66666%;
+    }
+
+    .bs6 {
+        width: 50%;
+    }
+
+    .bs7 {
+        width: 58.33333%;
+    }
+
+    .bs8 {
+        width: 66.66666%;
+    }
+
+    .bs9 {
+        width: 74.99999%;
+    }
+
+    .bs10 {
+        width: 83.33333%;
+    }
+
+    .bs11 {
+        width: 91.66666%;
+    }
+
+    .bs12 {
+        width: 100%;
+    }
+}
