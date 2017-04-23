@@ -1,0 +1,81 @@
+/*
+------------------------------------------
+                        INITIALISATION CSS
+------------------------------------------
+    by Zhartas
+    https://github.com/Zhartas/Zh-Front-end-framework
+ */
+
+* {
+    /*border: 1px dashed gray;*/
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-family: "sans-serif";
+    height: 100%;
+    font-size: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    font-size: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-family: "sans-serif";
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+input, select, textarea {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 100%;
+}
+
+img, embed, iframe, object, audio, video {
+    height: auto;
+    max-width: 100%;
+}
+
+iframe {
+    border: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td, th {
+    padding: 0;
+    text-align: left;
+}
