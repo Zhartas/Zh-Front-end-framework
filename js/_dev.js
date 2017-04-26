@@ -1,11 +1,36 @@
 'use strict';
-/* utilities */
-const log = (elt) => console.log(elt);
+
+/****** UTILITIES *******/
+// minimal log function
+function log(elt) {
+    return console.log(elt);
+}
+
+// select dom elt
+function $(elt) {
+    var r;
+    switch (elt.substr(0, 1)) {
+        case '#' :
+            r = document.getElementById(elt.substr(1));
+            break;
+        case '.':
+            r = document.getElementsByClassName(elt.substr(1));
+            break;
+        case '':
+            // invalid get tag
+            r = document.getElementsByTagName();
+        default:
+            console.error('please verify selection $(' + elt + ')');
+            break;
+    }
+    return r;
+}
+
+// get client size window
 const windowHeight = window.innerHeight.toString() + 'px';
+const windowWidth = window.innerWidth.toString() + 'px';
 
-
-/* code */
-
+// build html and css
 const buildHtml = {
     htmlElt: function (tag) {
         return document.createElement(tag);
@@ -18,6 +43,7 @@ const buildHtml = {
         return elt.appendChild(txt);
     },
     addCss: function (elt, properties) {
+        // Object method incompatible E9
         var key = Object.keys(properties);
         var value = Object.values(properties);
         if (typeof(properties) === "object") {
@@ -33,11 +59,14 @@ const buildHtml = {
         else {
             console.error('object require (cssProperties)');
         }
-
     }
 };
 
 
+
+
+
+/* MAIN CODE */
 const zhBar = buildHtml.htmlElt('div');
 const zhBarCss = {
     position: 'fixed',
@@ -49,7 +78,6 @@ const zhBarCss = {
 
 buildHtml.addAttribute(zhBar, 'id', "zhBar");
 buildHtml.addCss(zhBar, zhBarCss);
-
 
 
 const headerZhBarCss = {
@@ -64,10 +92,6 @@ buildHtml.addText(headerZhBar, 'ZH');
 buildHtml.addCss(headerZhBar, headerZhBarCss);
 
 
-log();
-log(headerZhBar);
-
 document.getElementsByTagName('body')[0].appendChild(zhBar);
-document.getElementById('zhBar').appendChild(headerZhBar);
-
+$('#zhBar').appendChild(headerZhBar);
 
