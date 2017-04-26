@@ -1,31 +1,37 @@
 'use strict';
 /* utilities */
 const log = (elt) => console.log(elt);
-const bodyInsert = (elt) => document.body.appendChild(elt);
 const windowHeight = window.innerHeight.toString() + 'px';
-
-
 
 
 /* code */
 
 const buildHtml = {
-    htmlElt: function(tag) {
+    htmlElt: function (tag) {
         return document.createElement(tag);
     },
     addAttribute: function (elt, attrType, name) {
         return elt.setAttribute(attrType, name);
     },
     addText: function (elt, text) {
-        const txt = document.createTextNode(text);
+        let txt = document.createTextNode(text);
         return elt.appendChild(txt);
     },
-    addCss: function(elt, property, value) {
-        if(elt.style[property] !== undefined) {
-            return elt.style[property] = value;
+    addCss: function (elt, properties) {
+        var key = Object.keys(properties);
+        var value = Object.values(properties);
+        if (typeof(properties) === "object") {
+            for (var i = 0; i < Object.keys(properties).length; i++) {
+                if (elt.style[key[i]] !== undefined) {
+                    elt.style[key[i]] = value[i];
+                }
+                else {
+                    console.error('Unexpected css value');
+                }
+            }
         }
-        else{
-            console.error('Unexpected css value');
+        else {
+            console.error('object require (cssProperties)');
         }
 
     }
@@ -33,14 +39,35 @@ const buildHtml = {
 
 
 const zhBar = buildHtml.htmlElt('div');
+const zhBarCss = {
+    position: 'fixed',
+    width: "50px",
+    height: windowHeight,
+    background: '#06b865',
+    boxShadow: '0 0 1px black'
+}
+
 buildHtml.addAttribute(zhBar, 'id', "zhBar");
-buildHtml.addCss(zhBar, 'background', "#06b865");
-buildHtml.addCss(zhBar, 'height', windowHeight);
-buildHtml.addCss(zhBar, 'box-shadow', '0 0 1px black');
-buildHtml.addCss(zhBar, 'width', '40px');
+buildHtml.addCss(zhBar, zhBarCss);
 
-log(zhBar);
 
-bodyInsert(zhBar);
+
+const headerZhBarCss = {
+    width: "100%",
+    height: '50px',
+    background: 'red'
+}
+
+const headerZhBar = buildHtml.htmlElt('div');
+buildHtml.addAttribute(headerZhBar, 'id', "headerZhBar");
+buildHtml.addText(headerZhBar, 'ZH');
+buildHtml.addCss(headerZhBar, headerZhBarCss);
+
+
+log();
+log(headerZhBar);
+
+document.getElementsByTagName('body')[0].appendChild(zhBar);
+document.getElementById('zhBar').appendChild(headerZhBar);
 
 
