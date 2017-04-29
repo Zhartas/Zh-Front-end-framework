@@ -7,21 +7,20 @@ function log(elt) {
 }
 
 // select dom elt
-function $(elt) {
+function get(elt) {
     var r;
-    switch (elt.substr(0, 1)) {
-        case '#' :
-            r = document.getElementById(elt.substr(1));
-            break;
-        case '.':
-            r = document.getElementsByClassName(elt.substr(1));
-            break;
-        case '':
-            // invalid get tag
-            r = document.getElementsByTagName();
-        default:
-            console.error('please verify selection $(' + elt + ')');
-            break;
+    var regex = /[a-z]/;
+    if (elt.substr(0, 1) === '#') {
+        r = document.getElementById(elt.substr(1));
+    }
+    else if (elt.substr(0, 1) === '.') {
+        r = document.getElementsByClassName(elt.substr(1));
+    }
+    else if (regex.test(elt.substr(0, 1)) === true) {
+        r = document.getElementsByTagName(elt);
+    }
+    else {
+        console.error('please verify selection $(' + elt + ')');
     }
     return r;
 }
@@ -39,7 +38,7 @@ const buildHtml = {
         return elt.setAttribute(attrType, name);
     },
     addText: function (elt, text) {
-        let txt = document.createTextNode(text);
+        var txt = document.createTextNode(text);
         return elt.appendChild(txt);
     },
     addCss: function (elt, properties) {
@@ -63,17 +62,16 @@ const buildHtml = {
 };
 
 
-
-
-
 /* MAIN CODE */
+/*
 const zhBar = buildHtml.htmlElt('div');
 const zhBarCss = {
     position: 'fixed',
-    width: "50px",
-    height: windowHeight,
-    background: '#06b865',
-    boxShadow: '0 0 1px black'
+    width: "100%",
+    height: '60px',
+    background: '#03A9F4',
+    color: "white",
+    boxShadow: '0 1px 8px rgba(0,0,0,.3)'
 }
 
 buildHtml.addAttribute(zhBar, 'id', "zhBar");
@@ -81,17 +79,15 @@ buildHtml.addCss(zhBar, zhBarCss);
 
 
 const headerZhBarCss = {
-    width: "100%",
-    height: '50px',
-    background: 'red'
+    width: "60px",
+    height: '60px',
 }
 
 const headerZhBar = buildHtml.htmlElt('div');
 buildHtml.addAttribute(headerZhBar, 'id', "headerZhBar");
-buildHtml.addText(headerZhBar, 'ZH');
 buildHtml.addCss(headerZhBar, headerZhBarCss);
 
 
 document.getElementsByTagName('body')[0].appendChild(zhBar);
-$('#zhBar').appendChild(headerZhBar);
-
+get('#zhBar').appendChild(headerZhBar);
+    */
