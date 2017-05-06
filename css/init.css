@@ -1,22 +1,19 @@
-/*
-------------------------------------------
-                        INITIALISATION CSS
-------------------------------------------
-    by Zhartas
-    https://github.com/Zhartas/Zh-Front-end-framework
- */
-
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
-html, body {
+html {
+    font-family: "sans-serif";
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
     margin: 0;
     padding: 0;
     position: relative;
-    font-family: "sans-serif";
     height: 100%;
     font-size: 100%;
 }
