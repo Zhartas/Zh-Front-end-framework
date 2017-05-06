@@ -1,9 +1,3 @@
-.clear {
-    clear: both;
-    height: 0;
-    overflow: hidden;
-}
-
 .c {
     width: 1280px;
     margin: auto;
@@ -13,6 +7,7 @@
 }
 
 .r {
+    position: relative;
     margin-left: -15px;
     margin-right: -15px;
 }
@@ -79,17 +74,23 @@
     width: 8.33333333%;
 }
 
+.hide {
+    display: none !important;
+}
+
 @media (max-width: 1279px) {
     .c {
         width: 960px;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 959px) {
     .c {
         width: 95%;
     }
+}
 
+@media (max-width: 768px) {
     .bm12 {
         width: 100%;
     }
@@ -136,6 +137,10 @@
 
     .bm1 {
         width: 8.33333333%;
+    }
+
+    .hideM {
+        display: none !important;
     }
 }
 
@@ -191,4 +196,9 @@
     .bs1 {
         width: 8.33333333%;
     }
+
+    .hideS {
+        display: none !important;
+    }
 }
+

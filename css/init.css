@@ -30,7 +30,11 @@ p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, 
     padding: 0;
 }
 
-button {
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
     cursor: pointer;
     border: none;
     outline: none;
@@ -48,6 +52,10 @@ li {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+a:active, a:hover {
+    outline: 0;
 }
 
 input, select, textarea {
